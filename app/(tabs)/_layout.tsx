@@ -1,4 +1,4 @@
-import { Colors } from "@/constants/colors";
+import { Colors } from "@constants/colors";
 
 import { Tabs } from "expo-router";
 import { Image } from "react-native";
@@ -21,7 +21,7 @@ export default function TabLayout() {
           title: "Home",
           tabBarIcon: ({ focused }) => (
             <Image
-              source={require("@/assets/art/batman.png")}
+              source={require("@assets/art/batman.png")}
               style={{
                 width: 24,
                 height: 24,

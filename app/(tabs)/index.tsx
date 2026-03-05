@@ -1,4 +1,5 @@
-import { PrimaryGradient } from "@/constants/gradients";
+import LogoutButton from "@components/logout-button";
+import { PrimaryGradient } from "@constants/gradients";
 
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,6 +9,7 @@ export default function Home() {
     <SafeAreaView style={styles.container} edges={["top"]}>
       <PrimaryGradient />
       <Text>Home</Text>
+      <LogoutButton />
     </SafeAreaView>
   );
 }

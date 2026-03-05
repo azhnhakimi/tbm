@@ -9,9 +9,9 @@ export default function QuestsLayout() {
   return (
     <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
       <Tabs>
-        <Tabs.Screen name="quest-list" />
-        <Tabs.Screen name="create-quest" />
-        <Tabs.Screen name="focus-mode" />
+        <Tabs.Screen name="quest-list" options={{ title: "Quest List" }} />
+        <Tabs.Screen name="create-quest" options={{ title: "Create Quest" }} />
+        <Tabs.Screen name="focus-mode" options={{ title: "Focus Mode" }} />
       </Tabs>
     </SafeAreaView>
   );
