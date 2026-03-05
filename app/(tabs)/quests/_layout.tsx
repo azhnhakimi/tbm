@@ -7,7 +7,7 @@ const Tabs = withLayoutContext(TopTabs.Navigator);
 
 export default function QuestsLayout() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
       <Tabs>
         <Tabs.Screen name="quest-list" />
         <Tabs.Screen name="create-quest" />
