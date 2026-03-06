@@ -1,14 +1,10 @@
 import { Redirect } from "expo-router";
-import { supabase } from "../lib/supabase";
+
+import { getSession } from "@lib/auth/getSession";
 
 export async function testConnection() {
-  const { data, error } = await supabase.auth.getSession();
-
-  console.log("Session:", data);
-
-  if (error) {
-    console.error(error);
-  }
+  const session = await getSession();
+  console.log("Session:", session);
 }
 
 export default function Index() {
