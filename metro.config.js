@@ -10,6 +10,7 @@ config.resolver.extraNodeModules = {
   "@services": path.resolve(__dirname, "services"),
   "@constants": path.resolve(__dirname, "constants"),
   "@assets": path.resolve(__dirname, "assets"),
+  "@models": path.resolve(__dirname, "models"),
 };
 
 module.exports = config;

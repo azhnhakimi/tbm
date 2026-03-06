@@ -1,3 +1,4 @@
+import { Colors } from "@constants/colors";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import {
@@ -96,14 +97,15 @@ export default function AuthForm() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0a0000",
+    width: "100%",
+    backgroundColor: Colors.primaryBackground,
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
   },
   title: {
     fontSize: 28,
-    color: "#ff4d4d",
+    color: Colors.primaryForeground,
     fontWeight: "bold",
     marginBottom: 30,
     textAlign: "center",
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   button: {
-    backgroundColor: "#8B0000",
+    backgroundColor: Colors.primaryForeground,
     paddingVertical: 16,
     paddingHorizontal: 50,
     borderRadius: 10,

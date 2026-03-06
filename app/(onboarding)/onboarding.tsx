@@ -10,6 +10,8 @@ import {
   View,
 } from "react-native";
 
+import { Colors } from "@constants/colors";
+
 const { width } = Dimensions.get("window");
 
 const slides = [
@@ -58,6 +60,13 @@ export default function Onboarding() {
         )}
       />
 
+      {/* Button only on last page */}
+      {currentIndex === slides.length - 1 && (
+        <TouchableOpacity style={styles.button} onPress={handleEnter}>
+          <Text style={styles.buttonText}>Enter the Dungeon</Text>
+        </TouchableOpacity>
+      )}
+
       {/* Dots */}
       <View style={styles.dotsContainer}>
         {slides.map((_, i) => (
@@ -67,13 +76,6 @@ export default function Onboarding() {
           />
         ))}
       </View>
-
-      {/* Button only on last page */}
-      {currentIndex === slides.length - 1 && (
-        <TouchableOpacity style={styles.button} onPress={handleEnter}>
-          <Text style={styles.buttonText}>Enter the Dungeon</Text>
-        </TouchableOpacity>
-      )}
     </View>
   );
 }
@@ -81,7 +83,8 @@ export default function Onboarding() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0a0000",
+    paddingVertical: 30,
+    backgroundColor: Colors.primaryBackground,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -102,8 +105,7 @@ const styles = StyleSheet.create({
 
   dotsContainer: {
     flexDirection: "row",
-    position: "absolute",
-    bottom: 120,
+    marginVertical: 20,
   },
 
   dot: {
@@ -119,9 +121,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    position: "absolute",
-    bottom: 60,
-    backgroundColor: "#8B0000",
+    backgroundColor: Colors.primaryForeground,
     paddingVertical: 14,
     paddingHorizontal: 32,
     borderRadius: 6,

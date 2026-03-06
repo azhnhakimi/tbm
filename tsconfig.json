@@ -9,7 +9,8 @@
       "@screens/*": ["screens/*"],
       "@services/*": ["services/*"],
       "@constants/*": ["constants/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@models/*": ["models/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]

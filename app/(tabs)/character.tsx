@@ -1,23 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { getFullPlayer } from "@lib/player/getFullPlayer";
+import { getPlayerStats } from "@lib/player/getPlayerStats";
+import { PlayerStats } from "@models/playerStats";
 
 export default function Character() {
+  const [stats, setStats] = useState<PlayerStats | null>(null);
+
   useEffect(() => {
-    async function loadPlayerData() {
-      const { player, stats, progress } = await getFullPlayer();
-      console.log(player);
-      console.log(stats);
-      console.log(progress);
+    async function loadData() {
+      const stats = await getPlayerStats();
+      setStats(stats);
     }
 
-    loadPlayerData();
+    loadData();
   }, []);
+
+  if (!stats) {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
-      <Text>Character</Text>
+      <Text>Mind: {stats.mind}</Text>
+      <Text>Discipline: {stats.discipline}</Text>
+      <Text>Focus: {stats.focus}</Text>
+      <Text>Strength: {stats.strength}</Text>
     </View>
   );
 }
